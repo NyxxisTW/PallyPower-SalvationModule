@@ -1,0 +1,56 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.blizzard.com/wow/ui/..\FrameXML\UI.xsd">
+
+	<Frame name="PPSM_MainFrame" toplevel="true" frameStrata="LOW" enableMouse="true"
+		movable="true" parent="UIParent" hidden="true">
+		<TitleRegion setAllPoints="true"/>
+		<Size x="48" y="56"/>
+		<Anchors>
+			<Anchor point="CENTER" relativeTo="UIParent" relativePoint="CENTER">
+				<Offset x="0" y="0"/>
+			</Anchor>
+		</Anchors>
+
+		<Frames>
+			<Button name="PPSM_Button">
+				<Anchors>
+					<Anchor point="CENTER">
+						<Offset x="0" y="-8"/>
+					</Anchor>
+				</Anchors>
+				<Size x="40" y="40"/>
+				<Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background"
+						edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+					<EdgeSize val="8"/>
+					<TileSize val="8"/>
+					<BackgroundInsets left="2" right="2" top="2" bottom="2"/>
+					<Color r="0.0" g="1" b="0.0" a="1"/>
+				</Backdrop>
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="PPSM_Title" inherits="GameFontNormalSmall" text="PP-SM">
+							<Anchors>
+								<Anchor point="CENTER" relativePoint="TOP">
+									<Offset x="0" y="6"/>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="PPSM_SalvationTexture" file="Interface\Icons\Spell_Holy_GreaterBlessingofSalvation" hidden="false">
+							<Size x="30" y="30"/>
+							<Anchors>
+								<Anchor point="CENTER"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnMouseDown>PPSM_OnClick()</OnMouseDown>
+				</Scripts>
+			</Button>
+
+		</Frames>
+
+	</Frame>
+
+</Ui>

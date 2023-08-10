@@ -1,0 +1,8 @@
+## Interface: 11200
+## Title: PallyPower-SalvationModule
+## Author: Nyxxis
+## Version: 0.1
+## SavedVariablesPerCharacter: PPSM_Config
+
+PallyPower-SalvationModule.lua
+PallyPower-SalvationModule.xml
