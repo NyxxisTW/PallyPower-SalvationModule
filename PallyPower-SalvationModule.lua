@@ -43,6 +43,14 @@ local function SendStatus()
 	end
 end
 
+local function SetScale(frame, scale)
+	local prevScale = frame:GetScale()
+	local point, _, _, xOfs, yOfs = frame:GetPoint()
+	frame:SetScale(scale)
+	frame:ClearAllPoints()
+	frame:SetPoint(point, xOfs / (scale / prevScale), yOfs / (scale / prevScale))
+end
+
 local function SlashCommandHandler(msg)
 	if (msg == "help") then
 		Print("Commands:")
@@ -71,7 +79,7 @@ local function SlashCommandHandler(msg)
 		Print("Frame is now unlocked.")
 	elseif (string.sub(msg, 1, 5) == "scale") then
 		local scale = string.sub(msg, 7)
-		PPSM_MainFrame:SetScale(scale)
+		SetScale(PPSM_MainFrame, scale)
 		PPSM_Config.Scale = scale
 		Print("Scale set to "..scale..".")
 	elseif (msg == "center" or msg == "c") then
